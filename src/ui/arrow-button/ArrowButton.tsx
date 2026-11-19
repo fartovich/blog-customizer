@@ -21,6 +21,14 @@ export const ArrowButton = ({
       role="button"
       aria-label="Открыть/Закрыть форму параметров статьи"
       tabIndex={0}
+      aria-expanded={isOpen}
+      aria-controls="article-params-panel"
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onClick();
+        }
+      }}
       className={clsx(styles.container, { [styles.container_open]: isOpen })}
       onClick={onClick}
     >
