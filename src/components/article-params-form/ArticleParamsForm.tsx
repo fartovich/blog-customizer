@@ -73,7 +73,6 @@ export const ArticleParamsForm = ({
       </div>
       <aside
         ref={asideRef}
-        id="article-params-panel"
         className={clsx(styles.container, { [styles.container_open]: isOpen })}
         aria-hidden={!isOpen}
       >
@@ -81,50 +80,48 @@ export const ArticleParamsForm = ({
           <Text as="h2" size={31} weight={800} uppercase>
             Задайте параметры
           </Text>
-          <div className={styles.fields}>
-            <Select
-              title="Шрифт"
-              selected={formState.fontFamilyOption}
-              options={fontFamilyOptions}
-              onChange={(option) =>
-                setFormState((state) => ({ ...state, fontFamilyOption: option }))
-              }
-            />
-            <RadioGroup
-              title="Размер шрифта"
-              name="fontSize"
-              selected={formState.fontSizeOption}
-              options={fontSizeOptions}
-              onChange={(option) =>
-                setFormState((state) => ({ ...state, fontSizeOption: option }))
-              }
-            />
-            <Select
-              title="Цвет шрифта"
-              selected={formState.fontColor}
-              options={fontColors}
-              onChange={(option) =>
-                setFormState((state) => ({ ...state, fontColor: option }))
-              }
-            />
-            <Separator />
-            <Select
-              title="Цвет фона"
-              selected={formState.backgroundColor}
-              options={backgroundColors}
-              onChange={(option) =>
-                setFormState((state) => ({ ...state, backgroundColor: option }))
-              }
-            />
-            <Select
-              title="Ширина контента"
-              selected={formState.contentWidth}
-              options={contentWidthArr}
-              onChange={(option) =>
-                setFormState((state) => ({ ...state, contentWidth: option }))
-              }
-            />
-          </div>
+          <Select
+            title="Шрифт"
+            selected={formState.fontFamilyOption}
+            options={fontFamilyOptions}
+            onChange={(option) =>
+              setFormState((state) => ({ ...state, fontFamilyOption: option }))
+            }
+          />
+          <RadioGroup
+            title="Размер шрифта"
+            name="fontSize"
+            selected={formState.fontSizeOption}
+            options={fontSizeOptions}
+            onChange={(option) =>
+              setFormState((state) => ({ ...state, fontSizeOption: option }))
+            }
+          />
+          <Select
+            title="Цвет шрифта"
+            selected={formState.fontColor}
+            options={fontColors}
+            onChange={(option) =>
+              setFormState((state) => ({ ...state, fontColor: option }))
+            }
+          />
+          <Separator />
+          <Select
+            title="Цвет фона"
+            selected={formState.backgroundColor}
+            options={backgroundColors}
+            onChange={(option) =>
+              setFormState((state) => ({ ...state, backgroundColor: option }))
+            }
+          />
+          <Select
+            title="Ширина контента"
+            selected={formState.contentWidth}
+            options={contentWidthArr}
+            onChange={(option) =>
+              setFormState((state) => ({ ...state, contentWidth: option }))
+            }
+          />
           <div className={styles.bottomContainer}>
             <Button
               title="Сбросить"
